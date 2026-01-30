@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Spam Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 SMS Spam Detection System</h1>
+            <p class="subtitle">Using Advanced Machine Learning Models</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="card">
+                    <h2>Enter Message</h2>
+                    <textarea id="messageInput" placeholder="Type or paste your SMS message here..." rows="5"></textarea>
+                    <button id="predictBtn" onclick="predictMessage()">🔍 Analyze Message</button>
+                    <button id="clearBtn" onclick="clearAll()" class="secondary-btn">Clear</button>
+                </div>
+            </section>
+
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <div class="card results-card">
+                    <h2>Analysis Results</h2>
+                    
+                    <div class="ensemble-result">
+                        <h3>Ensemble Prediction</h3>
+                        <div id="ensemblePrediction" class="prediction-box"></div>
+                        <div id="ensembleConfidence" class="confidence-bar"></div>
+                    </div>
+
+                    <div class="individual-results">
+                        <h3>Individual Model Results</h3>
+                        <div id="modelResults" class="models-grid"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <div class="card info-card">
+                    <h2>📊 Model Information</h2>
+                    <div class="models-info">
+                        <div class="model-info">
+                            <h4>🤖 Naive Bayes</h4>
+                            <p>Fast probabilistic classifier based on Bayes' theorem</p>
+                        </div>
+                        <div class="model-info">
+                            <h4>📈 Support Vector Machine (SVM)</h4>
+                            <p>Finds optimal hyperplane to separate spam from ham</p>
+                        </div>
+                        <div class="model-info">
+                            <h4>🌳 Random Forest</h4>
+                            <p>Ensemble of decision trees for robust classification</p>
+                        </div>
+                        <div class="model-info">
+                            <h4>⚡ XGBoost</h4>
+                            <p>Gradient boosting for high-accuracy predictions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 SMS Spam Detection System | Powered by Machine Learning</p>
+        </footer>
+    </div>
+
+    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+        <p>Analyzing message...</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
