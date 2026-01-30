@@ -56,5 +56,4 @@ SMS-Spam-Detection-Project/
 └── GUIDE.md
 ```
 
-## License
-This project is licensed under the MIT License.
+Have fun !!
